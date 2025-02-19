@@ -1,0 +1,41 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <title>login</title>
+    <link href="~/Content/bootstrap-grid.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/login.css">
+
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form method="post" action="@Url.Action("Login", "Login")">
+                <input type="text" name="username" placeholder="Username" required />
+                <input type="password" name="password" placeholder="Password" required />
+                <button type="submit">LOGIN</button>
+            </form>
+
+            @if (ViewBag.Message != null)
+            {
+                            <p style="color:red;">@ViewBag.Message</p>
+            }
+        </div>
+        <div class="layout-container">
+            <div class="layout">
+                <div class="layout-panel layout1">
+                    <h1>PND</h1>
+                    <p>Please enter a valid  Username and Password to the software.</p>
+                    <div class="button-group">
+                        <button class="ghost" id="About">ABOUT</button>
+                        <button class="ghost" id="Contact">CONTACT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
