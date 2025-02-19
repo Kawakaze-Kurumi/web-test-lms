@@ -1,0 +1,71 @@
+﻿@model IEnumerable<web_test_lms.Models.Agent>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentNamekd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentAdd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankAccountF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BankAccountC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Com)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentNamekd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentAdd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankAccountF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankAccountC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Com.ComId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Code">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Code">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Code">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

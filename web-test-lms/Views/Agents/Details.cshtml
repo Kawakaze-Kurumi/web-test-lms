@@ -1,0 +1,60 @@
+﻿@model web_test_lms.Models.Agent
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Agent</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AgentName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AgentName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AgentNamekd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AgentNamekd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AgentAdd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AgentAdd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankAccountF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankAccountF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BankAccountC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BankAccountC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Com)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Com.ComId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Code">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

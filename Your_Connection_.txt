@@ -1,0 +1,9 @@
+
+Scaffold-DbContext "Data Source=DESKTOP-S24TC32\SQLEXPRESS;Initial Catalog=test1;Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+
+VD : Scaffold-DbContext "Data Source=DESKTOP-S24TC32\SQLEXPRESS;Initial Catalog=test1;
+Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+VD2: Scaffold-DbContext "Data Source=DESKTOP-TE0IP29;Initial Catalog=test1;
+Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force 
