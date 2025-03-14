@@ -105,13 +105,13 @@ public partial class Test1Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-TE0IP29;Initial Catalog=test1;\nIntegrated Security=True;Trust Server Certificate=True");
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-S24TC32\\SQLEXPRESS;Initial Catalog=test1;\nIntegrated Security=True;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Agent>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__AGENT__AA1D4378518CB153");
+            entity.HasKey(e => e.Code).HasName("PK__AGENT__AA1D4378B304F22F");
 
             entity.ToTable("AGENT");
 
@@ -140,12 +140,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.Agents)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__AGENT__Com_ID__5EBF139D");
+                .HasConstraintName("FK__AGENT__Com_ID__71D1E811");
         });
 
         modelBuilder.Entity<AgentAction>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__AGENT_AC__3214EC27C726B6ED");
+            entity.HasKey(e => e.Id).HasName("PK__AGENT_AC__3214EC277AC29BA9");
 
             entity.ToTable("AGENT_ACTION");
 
@@ -163,12 +163,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.CodeNavigation).WithMany(p => p.AgentActions)
                 .HasForeignKey(d => d.Code)
-                .HasConstraintName("FK__AGENT_ACTI__CODE__619B8048");
+                .HasConstraintName("FK__AGENT_ACTI__CODE__74AE54BC");
         });
 
         modelBuilder.Entity<BlType>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__BL_TYPE__AA1D437885DC220F");
+            entity.HasKey(e => e.Code).HasName("PK__BL_TYPE__AA1D437855FA62AF");
 
             entity.ToTable("BL_TYPE");
 
@@ -183,7 +183,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Carrier>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__CARRIER__AA1D43782892AFA1");
+            entity.HasKey(e => e.Code).HasName("PK__CARRIER__AA1D4378092C54D6");
 
             entity.ToTable("CARRIER");
 
@@ -212,12 +212,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.Carriers)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__CARRIER__Com_ID__6477ECF3");
+                .HasConstraintName("FK__CARRIER__Com_ID__778AC167");
         });
 
         modelBuilder.Entity<CarrierAction>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__CARRIER___3214EC27C0540E22");
+            entity.HasKey(e => e.Id).HasName("PK__CARRIER___3214EC27A63119C8");
 
             entity.ToTable("CARRIER_ACTION");
 
@@ -238,12 +238,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.CodeNavigation).WithMany(p => p.CarrierActions)
                 .HasForeignKey(d => d.Code)
-                .HasConstraintName("FK__CARRIER_AC__CODE__6754599E");
+                .HasConstraintName("FK__CARRIER_AC__CODE__7A672E12");
         });
 
         modelBuilder.Entity<ChatMessage>(entity =>
         {
-            entity.HasKey(e => e.MessageId).HasName("PK__ChatMess__C87C037CEE5D4292");
+            entity.HasKey(e => e.MessageId).HasName("PK__ChatMess__C87C037C75CF9CE1");
 
             entity.Property(e => e.MessageId).HasColumnName("MessageID");
             entity.Property(e => e.Timestamp)
@@ -253,12 +253,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.UsernameNavigation).WithMany(p => p.ChatMessages)
                 .HasForeignKey(d => d.Username)
-                .HasConstraintName("FK__ChatMessa__Usern__3C69FB99");
+                .HasConstraintName("FK__ChatMessa__Usern__4F7CD00D");
         });
 
         modelBuilder.Entity<Cport>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__CPORT__AA1D437855549999");
+            entity.HasKey(e => e.Code).HasName("PK__CPORT__AA1D437814C986FB");
 
             entity.ToTable("CPORT");
 
@@ -272,7 +272,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Currency>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__CURRENCY__AA1D4378A0EE99FB");
+            entity.HasKey(e => e.Code).HasName("PK__CURRENCY__AA1D43788DF652AA");
 
             entity.ToTable("CURRENCY");
 
@@ -287,7 +287,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Fee>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__FEE__AA1D4378899BFD81");
+            entity.HasKey(e => e.Code).HasName("PK__FEE__AA1D4378AC656F3A");
 
             entity.ToTable("FEE");
 
@@ -307,7 +307,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<GoodsType>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__GOODS_TY__AA1D4378EF83BA66");
+            entity.HasKey(e => e.Code).HasName("PK__GOODS_TY__AA1D437847DEB7A2");
 
             entity.ToTable("GOODS_TYPE");
 
@@ -322,7 +322,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<InvoiceType>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__INVOICE___A25C5AA615D7C61C");
+            entity.HasKey(e => e.Code).HasName("PK__INVOICE___A25C5AA6A2F8722F");
 
             entity.ToTable("INVOICE_TYPE");
 
@@ -334,7 +334,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Kindofpackage>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__KINDOFPA__AA1D4378E8F89415");
+            entity.HasKey(e => e.Code).HasName("PK__KINDOFPA__AA1D437898F81A22");
 
             entity.ToTable("KINDOFPACKAGES");
 
@@ -351,7 +351,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Mode>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__MODE__AA1D4378CBC7DD10");
+            entity.HasKey(e => e.Code).HasName("PK__MODE__AA1D437861C057F6");
 
             entity.ToTable("MODE");
 
@@ -363,7 +363,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<Quotation>(entity =>
         {
-            entity.HasKey(e => e.QuotationId).HasName("PK__Quotatio__E19752B3EE86B537");
+            entity.HasKey(e => e.QuotationId).HasName("PK__Quotatio__E19752B37DA72B2A");
 
             entity.Property(e => e.QuotationId)
                 .HasMaxLength(50)
@@ -397,12 +397,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.Quotations)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__Quotation__Com_I__671F4F74");
+                .HasConstraintName("FK__Quotation__Com_I__7A3223E8");
         });
 
         modelBuilder.Entity<QuotationsCharge>(entity =>
         {
-            entity.HasKey(e => e.ChargeId).HasName("PK__Quotatio__17FC363BA0E7348B");
+            entity.HasKey(e => e.ChargeId).HasName("PK__Quotatio__17FC363B355C8607");
 
             entity.ToTable("Quotations_Charges");
 
@@ -421,12 +421,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Quotation).WithMany(p => p.QuotationsCharges)
                 .HasForeignKey(d => d.QuotationId)
-                .HasConstraintName("FK__Quotation__Quota__69FBBC1F");
+                .HasConstraintName("FK__Quotation__Quota__7D0E9093");
         });
 
         modelBuilder.Entity<Sourse>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__SOURSE__AA1D437887B84C7D");
+            entity.HasKey(e => e.Code).HasName("PK__SOURSE__AA1D4378A05A568E");
 
             entity.ToTable("SOURSE");
 
@@ -441,7 +441,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<SupType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__SUP_TYPE__3214EC2766126E24");
+            entity.HasKey(e => e.Id).HasName("PK__SUP_TYPE__3214EC27BBDC2CF0");
 
             entity.ToTable("SUP_TYPE");
 
@@ -453,7 +453,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblCharge>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_CHAR__3214EC2746ABE030");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_CHAR__3214EC2715C7ABFC");
 
             entity.ToTable("tbl_CHARGES");
 
@@ -493,12 +493,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Debit).WithMany(p => p.TblCharges)
                 .HasForeignKey(d => d.DebitId)
-                .HasConstraintName("FK__tbl_CHARG__Debit__2739D489");
+                .HasConstraintName("FK__tbl_CHARG__Debit__3A4CA8FD");
         });
 
         modelBuilder.Entity<TblCnee>(entity =>
         {
-            entity.HasKey(e => e.Cnee).HasName("PK__tbl_CNEE__AA572F50A18D7D9E");
+            entity.HasKey(e => e.Cnee).HasName("PK__tbl_CNEE__AA572F5060E3D69F");
 
             entity.ToTable("tbl_CNEE");
 
@@ -532,12 +532,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblCnees)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_CNEE__Com_ID__6D0D32F4");
+                .HasConstraintName("FK__tbl_CNEE__Com_ID__00200768");
         });
 
         modelBuilder.Entity<TblCneeAdd>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_CNEE__3214EC278F5EC458");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_CNEE__3214EC2721C59687");
 
             entity.ToTable("tbl_CNEE_ADD");
 
@@ -551,12 +551,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.CneeNavigation).WithMany(p => p.TblCneeAdds)
                 .HasForeignKey(d => d.Cnee)
-                .HasConstraintName("FK__tbl_CNEE_A__CNEE__6FE99F9F");
+                .HasConstraintName("FK__tbl_CNEE_A__CNEE__02FC7413");
         });
 
         modelBuilder.Entity<TblCom>(entity =>
         {
-            entity.HasKey(e => e.ComId).HasName("PK__tbl_COM__D85628ACE71F67E1");
+            entity.HasKey(e => e.ComId).HasName("PK__tbl_COM__D85628AC87AE11BE");
 
             entity.ToTable("tbl_COM");
 
@@ -672,7 +672,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblConth>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_CONT__3214EC2772102FE4");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_CONT__3214EC2760D4649A");
 
             entity.ToTable("tbl_CONTH");
 
@@ -703,12 +703,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.HblNavigation).WithMany(p => p.TblConths)
                 .HasForeignKey(d => d.Hbl)
-                .HasConstraintName("FK__tbl_CONTH__HBL__18EBB532");
+                .HasConstraintName("FK__tbl_CONTH__HBL__2BFE89A6");
         });
 
         modelBuilder.Entity<TblCustomer>(entity =>
         {
-            entity.HasKey(e => e.CustomerId).HasName("PK__tbl_CUST__8CB286B965FA2C29");
+            entity.HasKey(e => e.CustomerId).HasName("PK__tbl_CUST__8CB286B9C3E618EE");
 
             entity.ToTable("tbl_CUSTOMER");
 
@@ -752,16 +752,16 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblCustomers)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_CUSTO__Com_I__5070F446");
+                .HasConstraintName("FK__tbl_CUSTO__Com_I__6383C8BA");
 
             entity.HasOne(d => d.Staff).WithMany(p => p.TblCustomers)
                 .HasForeignKey(d => d.StaffId)
-                .HasConstraintName("FK__tbl_CUSTO__Staff__4F7CD00D");
+                .HasConstraintName("FK__tbl_CUSTO__Staff__628FA481");
         });
 
         modelBuilder.Entity<TblDeliveryConth>(entity =>
         {
-            entity.HasKey(e => e.DcId).HasName("PK__tbl_DELI__46564CF9D22B673F");
+            entity.HasKey(e => e.DcId).HasName("PK__tbl_DELI__46564CF9DD6DA4B8");
 
             entity.ToTable("tbl_DELIVERY_CONTH");
 
@@ -775,16 +775,16 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Del).WithMany(p => p.TblDeliveryConths)
                 .HasForeignKey(d => d.DelId)
-                .HasConstraintName("FK__tbl_DELIV__Del_I__1DB06A4F");
+                .HasConstraintName("FK__tbl_DELIV__Del_I__30C33EC3");
 
             entity.HasOne(d => d.IdNavigation).WithMany(p => p.TblDeliveryConths)
                 .HasForeignKey(d => d.Id)
-                .HasConstraintName("FK__tbl_DELIVERY__ID__1CBC4616");
+                .HasConstraintName("FK__tbl_DELIVERY__ID__2FCF1A8A");
         });
 
         modelBuilder.Entity<TblDeliverypfroof>(entity =>
         {
-            entity.HasKey(e => e.DelId).HasName("PK__tbl_DELI__ED31FCFDC17D9B9E");
+            entity.HasKey(e => e.DelId).HasName("PK__tbl_DELI__ED31FCFDE0505EA3");
 
             entity.ToTable("tbl_DELIVERYPFROOF");
 
@@ -818,7 +818,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblDepartment>(entity =>
         {
-            entity.HasKey(e => e.DepartmentId).HasName("PK__tbl_DEPA__151675D18D2A244D");
+            entity.HasKey(e => e.DepartmentId).HasName("PK__tbl_DEPA__151675D1E5774A90");
 
             entity.ToTable("tbl_DEPARTMENT");
 
@@ -836,12 +836,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblDepartments)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_DEPAR__Com_I__48CFD27E");
+                .HasConstraintName("FK__tbl_DEPAR__Com_I__5BE2A6F2");
         });
 
         modelBuilder.Entity<TblHbl>(entity =>
         {
-            entity.HasKey(e => e.Hbl).HasName("PK__tbl_HBL__C7565848D9A89060");
+            entity.HasKey(e => e.Hbl).HasName("PK__tbl_HBL__C7565848808A9541");
 
             entity.ToTable("tbl_HBL");
 
@@ -929,32 +929,32 @@ public partial class Test1Context : DbContext
             entity.HasOne(d => d.CneeNavigation).WithMany(p => p.TblHbls)
                 .HasForeignKey(d => d.Cnee)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_HBL__CNEE__0A9D95DB");
+                .HasConstraintName("FK__tbl_HBL__CNEE__1DB06A4F");
 
             entity.HasOne(d => d.Customer).WithMany(p => p.TblHbls)
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_HBL__Custome__08B54D69");
+                .HasConstraintName("FK__tbl_HBL__Custome__1BC821DD");
 
             entity.HasOne(d => d.Request).WithMany(p => p.TblHbls)
                 .HasForeignKey(d => d.RequestId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_HBL__Request__06CD04F7");
+                .HasConstraintName("FK__tbl_HBL__Request__19DFD96B");
 
             entity.HasOne(d => d.ShipperNavigation).WithMany(p => p.TblHbls)
                 .HasForeignKey(d => d.Shipper)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_HBL__Shipper__09A971A2");
+                .HasConstraintName("FK__tbl_HBL__Shipper__1CBC4616");
 
             entity.HasOne(d => d.Staff).WithMany(p => p.TblHbls)
                 .HasForeignKey(d => d.StaffId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_HBL__Staff_I__07C12930");
+                .HasConstraintName("FK__tbl_HBL__Staff_I__1AD3FDA4");
         });
 
         modelBuilder.Entity<TblHscode>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_HSCO__3214EC27F26FC43F");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_HSCO__3214EC27BD5E1EC4");
 
             entity.ToTable("tbl_HSCODE");
 
@@ -1086,7 +1086,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblInvoice>(entity =>
         {
-            entity.HasKey(e => e.DebitId).HasName("PK__tbl_INVO__607C9BB9B58B5217");
+            entity.HasKey(e => e.DebitId).HasName("PK__tbl_INVO__607C9BB9B26F1A17");
 
             entity.ToTable("tbl_INVOICE");
 
@@ -1118,16 +1118,16 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.HblNavigation).WithMany(p => p.TblInvoices)
                 .HasForeignKey(d => d.Hbl)
-                .HasConstraintName("FK__tbl_INVOICE__HBL__245D67DE");
+                .HasConstraintName("FK__tbl_INVOICE__HBL__37703C52");
 
             entity.HasOne(d => d.Supplier).WithMany(p => p.TblInvoices)
                 .HasForeignKey(d => d.SupplierId)
-                .HasConstraintName("FK__tbl_INVOI__Suppl__236943A5");
+                .HasConstraintName("FK__tbl_INVOI__Suppl__367C1819");
         });
 
         modelBuilder.Entity<TblJob>(entity =>
         {
-            entity.HasKey(e => e.RequestId).HasName("PK__tbl_JOB__E9C5B2933864ABF2");
+            entity.HasKey(e => e.RequestId).HasName("PK__tbl_JOB__E9C5B293841EA6D0");
 
             entity.ToTable("tbl_JOB");
 
@@ -1205,20 +1205,20 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.AgentNavigation).WithMany(p => p.TblJobs)
                 .HasForeignKey(d => d.Agent)
-                .HasConstraintName("FK__tbl_JOB__Agent__00200768");
+                .HasConstraintName("FK__tbl_JOB__Agent__1332DBDC");
 
             entity.HasOne(d => d.CarrierNavigation).WithMany(p => p.TblJobs)
                 .HasForeignKey(d => d.Carrier)
-                .HasConstraintName("FK__tbl_JOB__Carrier__01142BA1");
+                .HasConstraintName("FK__tbl_JOB__Carrier__14270015");
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblJobs)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_JOB__Com_ID__03F0984C");
+                .HasConstraintName("FK__tbl_JOB__Com_ID__17036CC0");
         });
 
         modelBuilder.Entity<TblLog>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_LOG__3214EC27449122A2");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_LOG__3214EC27803365E5");
 
             entity.ToTable("tbl_LOG");
 
@@ -1239,7 +1239,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblMessage>(entity =>
         {
-            entity.HasKey(e => e.MessageId).HasName("PK__tbl_MESS__C87C037CF4B4476F");
+            entity.HasKey(e => e.MessageId).HasName("PK__tbl_MESS__C87C037C35C1552F");
 
             entity.ToTable("tbl_MESSAGES");
 
@@ -1254,7 +1254,7 @@ public partial class Test1Context : DbContext
 
         modelBuilder.Entity<TblScustomer>(entity =>
         {
-            entity.HasKey(e => e.ScustumerId).HasName("PK__tbl_SCUS__BCB8F292850EDB7A");
+            entity.HasKey(e => e.ScustumerId).HasName("PK__tbl_SCUS__BCB8F29212CD0B66");
 
             entity.ToTable("tbl_SCUSTOMER");
 
@@ -1328,12 +1328,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Staff).WithMany(p => p.TblScustomers)
                 .HasForeignKey(d => d.StaffId)
-                .HasConstraintName("FK__tbl_SCUST__Staff__534D60F1");
+                .HasConstraintName("FK__tbl_SCUST__Staff__66603565");
         });
 
         modelBuilder.Entity<TblScustomerRelationship>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_SCUS__3214EC279FFD4F36");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_SCUS__3214EC27DFA8BE9E");
 
             entity.ToTable("tbl_SCUSTOMER_RELATIONSHIP");
 
@@ -1352,12 +1352,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Scustumer).WithMany(p => p.TblScustomerRelationships)
                 .HasForeignKey(d => d.ScustumerId)
-                .HasConstraintName("FK__tbl_SCUST__SCust__5629CD9C");
+                .HasConstraintName("FK__tbl_SCUST__SCust__693CA210");
         });
 
         modelBuilder.Entity<TblShipper>(entity =>
         {
-            entity.HasKey(e => e.Shipper).HasName("PK__tbl_SHIP__AD512F84B7C7859A");
+            entity.HasKey(e => e.Shipper).HasName("PK__tbl_SHIP__AD512F84ED153AE6");
 
             entity.ToTable("tbl_SHIPPER");
 
@@ -1380,12 +1380,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblShippers)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_SHIPP__Com_I__6A30C649");
+                .HasConstraintName("FK__tbl_SHIPP__Com_I__7D439ABD");
         });
 
         modelBuilder.Entity<TblStaff>(entity =>
         {
-            entity.HasKey(e => e.StaffId).HasName("PK__tbl_STAF__32D1F3C3045172DC");
+            entity.HasKey(e => e.StaffId).HasName("PK__tbl_STAF__32D1F3C3D8837D4C");
 
             entity.ToTable("tbl_STAFF");
 
@@ -1435,16 +1435,16 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblStaffs)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_STAFF__Com_I__4CA06362");
+                .HasConstraintName("FK__tbl_STAFF__Com_I__5FB337D6");
 
             entity.HasOne(d => d.Department).WithMany(p => p.TblStaffs)
                 .HasForeignKey(d => d.DepartmentId)
-                .HasConstraintName("FK__tbl_STAFF__Depar__4BAC3F29");
+                .HasConstraintName("FK__tbl_STAFF__Depar__5EBF139D");
         });
 
         modelBuilder.Entity<TblSupplier>(entity =>
         {
-            entity.HasKey(e => e.SupplierId).HasName("PK__tbl_SUPP__83918D9870E33868");
+            entity.HasKey(e => e.SupplierId).HasName("PK__tbl_SUPP__83918D9826E9B79D");
 
             entity.ToTable("tbl_SUPPLIER");
 
@@ -1474,12 +1474,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblSuppliers)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_SUPPL__Com_I__59063A47");
+                .HasConstraintName("FK__tbl_SUPPL__Com_I__6C190EBB");
         });
 
         modelBuilder.Entity<TblSupplierAction>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_SUPP__3214EC275CF63476");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_SUPP__3214EC27D7231BA4");
 
             entity.ToTable("tbl_SUPPLIER_ACTION");
 
@@ -1497,12 +1497,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Supplier).WithMany(p => p.TblSupplierActions)
                 .HasForeignKey(d => d.SupplierId)
-                .HasConstraintName("FK__tbl_SUPPL__Suppl__5BE2A6F2");
+                .HasConstraintName("FK__tbl_SUPPL__Suppl__6EF57B66");
         });
 
         modelBuilder.Entity<TblTaiKhoan>(entity =>
         {
-            entity.HasKey(e => e.Username).HasName("PK__tbl_TAI___536C85E5ADC288A4");
+            entity.HasKey(e => e.Username).HasName("PK__tbl_TAI___536C85E5F3DD1F34");
 
             entity.ToTable("tbl_TAI_KHOAN");
 
@@ -1519,12 +1519,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblTaiKhoans)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_TAI_K__Com_I__398D8EEE");
+                .HasConstraintName("FK__tbl_TAI_K__Com_I__4CA06362");
         });
 
         modelBuilder.Entity<TblTaiKhoanMessage>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_TAI___3214EC27782EDB72");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_TAI___3214EC270281489A");
 
             entity.ToTable("tbl_TAI_KHOAN_MESSAGES");
 
@@ -1536,17 +1536,17 @@ public partial class Test1Context : DbContext
             entity.HasOne(d => d.Message).WithMany(p => p.TblTaiKhoanMessages)
                 .HasForeignKey(d => d.MessageId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_TAI_K__Messa__44FF419A");
+                .HasConstraintName("FK__tbl_TAI_K__Messa__5812160E");
 
             entity.HasOne(d => d.UsernameNavigation).WithMany(p => p.TblTaiKhoanMessages)
                 .HasForeignKey(d => d.Username)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__tbl_TAI_K__Usern__45F365D3");
+                .HasConstraintName("FK__tbl_TAI_K__Usern__59063A47");
         });
 
         modelBuilder.Entity<TblTutt>(entity =>
         {
-            entity.HasKey(e => e.SoTutt).HasName("PK__tbl_TUTT__2F552821CFFED225");
+            entity.HasKey(e => e.SoTutt).HasName("PK__tbl_TUTT__2F552821F2D90DBE");
 
             entity.ToTable("tbl_TUTT");
 
@@ -1579,12 +1579,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.Com).WithMany(p => p.TblTutts)
                 .HasForeignKey(d => d.ComId)
-                .HasConstraintName("FK__tbl_TUTT__Com_ID__76969D2E");
+                .HasConstraintName("FK__tbl_TUTT__Com_ID__09A971A2");
         });
 
         modelBuilder.Entity<TblTuttJob>(entity =>
         {
-            entity.HasKey(e => e.Stt).HasName("PK__tbl_TUTT__CA1EB69005DED526");
+            entity.HasKey(e => e.Stt).HasName("PK__tbl_TUTT__CA1EB690C98EE33B");
 
             entity.ToTable("tbl_TUTT_JOB");
 
@@ -1600,16 +1600,16 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.HblNavigation).WithMany(p => p.TblTuttJobs)
                 .HasForeignKey(d => d.Hbl)
-                .HasConstraintName("FK__tbl_TUTT_JO__HBL__14270015");
+                .HasConstraintName("FK__tbl_TUTT_JO__HBL__2739D489");
 
             entity.HasOne(d => d.SoTuttNavigation).WithMany(p => p.TblTuttJobs)
                 .HasForeignKey(d => d.SoTutt)
-                .HasConstraintName("FK__tbl_TUTT___SoTUT__1332DBDC");
+                .HasConstraintName("FK__tbl_TUTT___SoTUT__2645B050");
         });
 
         modelBuilder.Entity<TblTuttPhi>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tbl_TUTT__3214EC27473E2227");
+            entity.HasKey(e => e.Id).HasName("PK__tbl_TUTT__3214EC271475313B");
 
             entity.ToTable("tbl_TUTT_PHI");
 
@@ -1630,12 +1630,12 @@ public partial class Test1Context : DbContext
 
             entity.HasOne(d => d.SoTuttNavigation).WithMany(p => p.TblTuttPhis)
                 .HasForeignKey(d => d.SoTutt)
-                .HasConstraintName("FK__tbl_TUTT___SoTUT__7C4F7684");
+                .HasConstraintName("FK__tbl_TUTT___SoTUT__0F624AF8");
         });
 
         modelBuilder.Entity<Unit>(entity =>
         {
-            entity.HasKey(e => e.Code).HasName("PK__UNIT__AA1D437888DC072B");
+            entity.HasKey(e => e.Code).HasName("PK__UNIT__AA1D4378C53D74A9");
 
             entity.ToTable("UNIT");
 

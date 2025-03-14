@@ -5,37 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - web_test_lms</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/web_test_lms.styles.css" asp-append-version="true" />
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+    <script src="~/js/layout.js" defer asp-append-version="true"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav class="col-sm-2 bg-dark text-white vh-100 p-3">
-                <h4 class="text-center">web_test_lms</h4>
-                <a class="d-block text-white text-decoration-none py-2" asp-controller="Home" asp-action="Index">🏠 Home</a>
-                <a class="d-block text-white text-decoration-none py-2" asp-controller="Home" asp-action="Privacy">🔒 Privacy</a>
-                <a class="d-block text-white text-decoration-none py-2" asp-controller="Agents" asp-action="Index">👥 Agents</a>
-            </nav>
-
-            <!-- Nội dung chính -->
-            <div class="col-sm-10">
-                <div class="container">
-                    <main role="main" class="pb-3">
-                        @RenderBody()
-                    </main>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="border-top footer text-muted text-center py-3">
+    <nav id="sidebar">
+        <ul>
+            <li class="active">
+                <a asp-controller="Home" asp-action="Index">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a asp-controller="Agents" asp-action="Index">
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+                    <span>Create</span>
+                    </button>
+                <ul class="sub-menu">
+                    <div>
+                    <li><a href="#">Folder</a></li>
+                    <li><a href="#">Document</a></li>
+                    <li><a href="#">Project</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <button onclick=toggleSubMenu(this) class="dropdown-btn">
+                    <span>Todo-Lists</span>
+                    </button>
+                <ul class="sub-menu">
+                    <div>
+                    <li><a href="#">Work</a></li>
+                    <li><a href="#">Private</a></li>
+                    <li><a href="#">Coding</a></li>
+                    <li><a href="#">Gardening</a></li>
+                    <li><a href="#">School</a></li>
+                    </div>
+                </ul>
+            </li>
+            <li>
+                <a href="calendar.html">
+                    <span>Calendar</span>
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span>Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main role="main">
         <div class="container">
-            &copy; 2025 - web_test_lms - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            @RenderBody()
         </div>
-    </footer>
+    </main>
 
     @RenderSection("Scripts", required: false)
 </body>
