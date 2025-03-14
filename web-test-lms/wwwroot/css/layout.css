@@ -81,9 +81,7 @@ body {
         margin-bottom: 15px;
     }
 
-.container {
-    height: auto;
-    width: auto;
+.container-fluid {
     border: 1px solid var(--line-clr);
     border-radius: 1em;
     margin-bottom: 20px;
