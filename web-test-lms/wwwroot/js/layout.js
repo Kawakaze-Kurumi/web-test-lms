@@ -5,16 +5,16 @@
 
 const closeAllDropdowns = () => {
     document.querySelectorAll(".dropdown-container.open").forEach(openDropdown => {
-        toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu"), false);
+        toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu1"), false);
     });
 }
 
-document.querySelectorAll(".dropdown-toggle").forEach(dropdownToggle => {
+document.querySelectorAll(".dropdown-toggle1").forEach(dropdownToggle => {
     dropdownToggle.addEventListener("click", e => {
         e.preventDefault();
 
         const dropdown = e.target.closest(".dropdown-container");
-        const menu = dropdown.querySelector(".dropdown-menu");
+        const menu = dropdown.querySelector(".dropdown-menu1");
         const isOpen = dropdown.classList.contains("open");
 
         closeAllDropdowns();

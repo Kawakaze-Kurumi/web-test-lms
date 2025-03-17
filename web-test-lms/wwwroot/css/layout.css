@@ -112,7 +112,7 @@ body {
     transform: translateY(65px);
 }
 
-.sidebar-nav .nav-item .nav-link {
+.sidebar-nav .nav-item1 .nav-link1 {
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -125,16 +125,16 @@ body {
     transition: 0.4s ease;
 }
 
-.sidebar-nav .nav-item:is(:hover, .open) > .nav-link:not(.dropdown-title) {
+.sidebar-nav .nav-item1:is(:hover, .open) > .nav-link1:not(.dropdown-title) {
     background: #EEF2FF;
     color: #151A2E;
 }
 
-.sidebar-nav .nav-link :where(.nav-label, .dropdown-icon) {
+.sidebar-nav .nav-link1 :where(.nav-label, .dropdown-icon) {
     transition: opacity 0.3s ease;
 }
 
-.sidebar.collapsed .nav-link :where(.nav-label, .dropdown-icon) {
+.sidebar.collapsed .nav-link1 :where(.nav-label, .dropdown-icon) {
     opacity: 0;
     pointer-events: none;
 }
@@ -146,7 +146,7 @@ body {
     background: #151A2E;
 }
 
-.sidebar-nav .nav-item {
+.sidebar-nav .nav-item1 {
     position: relative;
 }
 
@@ -159,7 +159,7 @@ body {
     transition: opacity 0.3s 0s ease;
 }
 
-.sidebar-nav .dropdown-menu {
+.sidebar-nav .dropdown-menu1 {
     height: 0;
     overflow: hidden;
     list-style: none;
@@ -171,7 +171,7 @@ body {
     transform: rotate(180deg);
 }
 
-.sidebar.collapsed .dropdown-menu {
+.sidebar.collapsed .dropdown-menu1 {
     position: absolute;
     left: 100%;
     top: -10px;
@@ -185,33 +185,33 @@ body {
     transition: 0s;
 }
 
-    .sidebar.collapsed .dropdown-menu:has(.dorpdown-link) {
+    .sidebar.collapsed .dropdown-menu1:has(.dorpdown-link) {
         padding: 7px 10px 7px 24px;
     }
 
-    .sidebar.collapsed .nav-item:hover .dropdown-menu {
+    .sidebar.collapsed .nav-item1:hover .dropdown-menu1 {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(12px);
         transition: 0.4s ease;
     }
 
-    .dropdown-menu .nav-item .nav-link {
+    .dropdown-menu1 .nav-item1 .nav-link1 {
         padding: 9px 10px;
     }
 
-.sidebar.collapsed .dropdown-menu .nav-link {
+.sidebar.collapsed .dropdown-menu1 .nav-link1 {
     padding: 7px 10px;
 }
 
-.dropdown-menu .nav-item .dropdown-title{
+.dropdown-menu1 .nav-item1 .dropdown-title{
     display: none;
 }
 
-.dropdown-menu:has(.dorpdown-link) .nav-item .dropdown-title {
+.dropdown-menu1:has(.dorpdown-link) .nav-item1 .dropdown-title {
     font-weight: 500;
 }
 
-.sidebar.collapsed .dropdown-menu .nav-item .dropdown-title {
+.sidebar.collapsed .dropdown-menu1 .nav-item1 .dropdown-title {
     display: block;
 }
