@@ -1,0 +1,40 @@
+﻿@model IEnumerable<web_test_lms.Models.Cport>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>PORT - CẢNG</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">TẠO MỚI</a>
+</p>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PortName)
+            </th>
+			<th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PortName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Code" class="btn btn-primary">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Code" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
