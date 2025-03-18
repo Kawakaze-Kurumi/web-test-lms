@@ -9,28 +9,28 @@
 <p>
     <a asp-action="Create" class="btn btn-primary">TẠO MỚI</a>
 </p>
-<table class="table">
+<table class="table" style="border: 1px solid gray">
     <thead class="table-dark">
         <tr>
-            <th>
+            <th class="col-3">
                 @Html.DisplayNameFor(model => model.Code)
             </th>
-            <th>
+            <th class="col-3">
                 @Html.DisplayNameFor(model => model.PortName)
-            </th>
+            </th class="col-1">
 			<th></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model) {
             <tr>
-                <td>
+                <td class="col-3">
                     @Html.DisplayFor(modelItem => item.Code)
                 </td>
-                <td>
+                <td class="col-3">
                     @Html.DisplayFor(modelItem => item.PortName)
                 </td>
-                <td>
+                <td class="col-1" style="text-align: right; padding-right: 20px">
                     <a asp-action="Edit" asp-route-id="@item.Code" class="btn btn-primary">Edit</a> |
                     <a asp-action="Delete" asp-route-id="@item.Code" class="btn btn-danger">Delete</a>
                 </td>
